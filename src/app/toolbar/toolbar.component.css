@@ -1,0 +1,28 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+
+.mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color {
+    background-color: #F9B139;
+    color: #FFFFF1;
+    font-size: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25%;
+}
+
+.mat-toolbar-single-row {
+    background-color: #F8F9FB;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.a1 {
+
+    color: #A0A0A0;
+    margin: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    
+}

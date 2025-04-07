@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  --mat-sys-surface: #1D1918;
+}
+a {
+  color: #F2A847;
+}
+.mat-tree-node {
+  color: white !important;
+  border-bottom: solid 1px;
+  margin: 0 10px;
+}
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+:root {
+  --primary-color: #605DC8;
+  --secondary-color: #8B89E6;
+  --accent-color: #e8e7fa;
+  --shadow-color: #E8E8E8;
+}
+
+button.primary {
+  padding: 10px;
+  border: solid 1px var(--primary-color);
+  background: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Futura, 'Trebuchet MS' sans-serif; }
