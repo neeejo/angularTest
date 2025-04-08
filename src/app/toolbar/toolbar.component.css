@@ -30,3 +30,12 @@
 .mat-toolbar {
     padding: 25px;
 }
+
+a.active {
+    font-weight: bold;
+    color: #3f51b5;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }

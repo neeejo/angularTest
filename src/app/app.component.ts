@@ -1,8 +1,20 @@
-import {Component} from '@angular/core';
-import { SideBarComponent } from './side-bar/side-bar.component';
+import { Component } from '@angular/core';
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { RouterModule } from '@angular/router';
+import { PhotoContainerComponent } from './photo-container/photo-container.component';
+import { TreeFlatChildAccessorOverviewExample } from './navigator-tree/navigator-tree.component';
+import { Toolbar } from './toolbar/toolbar.component';
+
 @Component({
   selector: 'app-root',
-  imports: [SideBarComponent],
+  imports: [
+    Toolbar,
+    MatSidenavModule,
+    RouterModule,
+    PhotoContainerComponent,
+    TreeFlatChildAccessorOverviewExample,
+    ],
+  standalone: true,
   templateUrl: 'app.component.html',
   styleUrls: ['./app.component.css'],
 })

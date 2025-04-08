@@ -1,1 +1,28 @@
-<app-side-bar></app-side-bar>
+<!-- <mat-drawer-container class="example-container">
+  <app-side-bar></app-side-bar>
+  
+  <mat-drawer-content class="mat-drawer-content-custom"> 
+    <app-content-side-container></app-content-side-container>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container> -->
+<!-- <router-outlet></router-outlet> -->
+
+<mat-drawer-container class="example-container">
+  <!-- SideBar -->
+  <mat-drawer class="mat-drawer-custom" mode="side" opened>
+  <app-photo-container></app-photo-container>
+  <app-navigator-tree></app-navigator-tree>
+  <div>
+    <p class="footext">
+      Copyright &#64;2025 All rights reserved. | This template is made by <a href="https://www.kingsrl.com/">KING Company s.r.l.</a>
+    </p>
+  </div>
+  </mat-drawer>
+
+  <!-- Main Content -->
+  <mat-drawer-content class="mat-drawer-content-custom container">
+    <app-toolbar></app-toolbar>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

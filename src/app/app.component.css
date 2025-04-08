@@ -10,3 +10,26 @@ header {
 .content {
   padding: var(--content-padding);
 }
+.example-container {
+  width: auto;
+  height: 100%;
+  border: 1px solid #fcf8f8;
+  /* The background property is added to clearly distinguish the borders between drawer and main
+     content */
+     background: #FAFAFA;
+}
+.mat-drawer-custom {
+  background-color: #1D1918;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+}
+.footext {
+  color: #9F9B9A;
+  margin: 10px;
+  font-size: 13px;
+}
+
+.container {
+  padding: 25px;
+  width: auto;
+}
