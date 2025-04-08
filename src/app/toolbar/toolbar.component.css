@@ -26,3 +26,7 @@
     text-decoration: none;
     
 }
+
+.mat-toolbar {
+    padding: 25px;
+}
