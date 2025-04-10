@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { RouterLink } from '@angular/router';
+import {RouterModule, RouterLink } from '@angular/router';
 
 /**
  * @title Toolbar 
@@ -11,7 +11,9 @@ import { RouterLink } from '@angular/router';
   selector: 'app-toolbar',
   templateUrl: 'toolbar.component.html',
   styleUrl: 'toolbar.component.css',
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, RouterLink],
+  imports: [MatToolbarModule, MatButtonModule, MatIconModule, RouterLink, RouterModule],
   standalone: true
 })
-export class Toolbar {}
+export class Toolbar {
+  @Output() toggleSidebar = new EventEmitter<void>();
+}

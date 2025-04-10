@@ -1,15 +1,18 @@
 :host {
   --content-padding: 10px;
 }
+
 header {
   display: block;
   height: 60px;
   padding: var(--content-padding);
   box-shadow: 0px 5px 25px var(--shadow-color);
 }
+
 .content {
   padding: var(--content-padding);
 }
+
 .example-container {
   width: auto;
   height: 100%;
@@ -29,7 +32,14 @@ header {
   font-size: 13px;
 }
 
+.foobar {
+  margin-top: 25px;
+}
+
 .container {
   padding: 25px;
   width: auto;
+  height: -webkit-fill-available;
 }
+
+

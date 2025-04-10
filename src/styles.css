@@ -2,9 +2,40 @@
 * {
   --mat-sys-surface: #1D1918;
 }
-a {
+
+.aYellow {
   color: #F2A847;
 }
+
+.a1 {
+
+  color: #A0A0A0;
+  margin: 4px;
+  font-size: 14px;
+  text-decoration: none;
+  
+}
+
+
+
+
+.a2 {
+
+  color: #FDFCFA;
+  margin: 4px;
+  font-size: 14px;
+  text-decoration: none;
+  
+}
+
+.a2.active {
+  color: #FFC730;
+  font-weight: bold;
+}
+
+
+
+
 .mat-tree-node {
   color: white !important;
   border-bottom: solid 1px;

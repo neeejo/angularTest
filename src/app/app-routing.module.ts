@@ -11,7 +11,10 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'index', pathMatch: 'full' },
       { path: 'index', component: ContentSideComponent },
-      { path: 'content2', component: ContentSide2Component },
+      { path: 'about', component: ContentSide2Component },
+      { path: 'pages', component: ContentSideComponent },
+      { path: 'portfolio', component: ContentSide2Component },
+      { path: 'contact', component: ContentSide2Component },
     ],
   },
 ];

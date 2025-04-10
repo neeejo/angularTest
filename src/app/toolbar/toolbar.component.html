@@ -1,13 +1,15 @@
 <mat-toolbar>
-    <button mat-icon-button class="example-icon button-custom"  aria-label="Example icon-button with menu icon">
+    <button mat-icon-button class="example-icon button-custom"  
+      aria-label="Toggle sidebar" (click)="toggleSidebar.emit()">
       <mat-icon>menu</mat-icon>
     </button>
     <span class="example-spacer"></span>
     <nav>
-      <a class="a1" routerLink="/index" routerLinkActive="active">Home</a>
-      <a class="a1" routerLink="/content2" routerLinkActive="active">Content 2</a>
-      <a class="a1" href>Portfolio</a>
-      <a class="a1" href>Contact</a>
+      <a class="a1" routerLink="index" routerLinkActive="active">Home</a>
+      <a class="a1" routerLink="about" routerLinkActive="active">About</a>
+      <a class="a1" routerLink="pages" routerLinkActive="active">Pages</a>
+      <a class="a1" routerLink="portfolio" routerLinkActive="active">Portfolio</a>
+      <a class="a1" routerLink="contact" routerLinkActive="active">Contact</a>
     </nav>
     
 </mat-toolbar>
