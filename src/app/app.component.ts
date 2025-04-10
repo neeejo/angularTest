@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { RouterModule } from '@angular/router';
 import { PhotoContainerComponent } from './photo-container/photo-container.component';
-import { TreeFlatChildAccessorOverviewExample } from './navigator-tree/navigator-tree.component';
+import { NavigatorTreeComponent } from './navigator-tree/navigator-tree.component';
 import { Toolbar } from './toolbar/toolbar.component';
 
 @Component({
@@ -12,7 +12,7 @@ import { Toolbar } from './toolbar/toolbar.component';
     MatSidenavModule,
     RouterModule,
     PhotoContainerComponent,
-    TreeFlatChildAccessorOverviewExample,
+    NavigatorTreeComponent,
     ],
   standalone: true,
   templateUrl: 'app.component.html',
