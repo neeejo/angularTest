@@ -6,6 +6,8 @@ import { ContentSide2Component } from "./content-side-container/content-side2/co
 import { ContentSide3Component } from "./content-side-container/content-side3/content-side3.component";
 import { ContentSide4Component } from "./content-side-container/content-side4/content-side4.component";
 import { ContentSide5Component } from "./content-side-container/content-side5/content-side5.component";
+import { PortfolioChild1Component } from "./content-side-container/portfolio-child1/portfolio-child1component";
+
 
 export const routes: Routes = [
   {
@@ -42,7 +44,7 @@ export const routes: Routes = [
       { 
         path: "portfolio",
         children: [
-          { path: "4041", component: ContentSide3Component },
+          { path: "4041", component: PortfolioChild1Component },
           { path: "4042", component: ContentSide3Component },
           { path: "4043", component: ContentSide3Component },
           { path: "", component: ContentSide3Component },

@@ -18,7 +18,6 @@
         </a>
       </ng-container>
   
-      <!-- Menu a tendina per i figli -->
       <div class="dropdown" *ngIf="hoveredNode === node && node.children" (mouseover)="onHover(node)" (mouseleave)="onLeave()">
         <ng-container *ngFor="let child of node.children">
           <a *ngIf="child.route" class="dropdown-item a2" [routerLink]="child.route" routerLinkActive="active" (click)="onNavigate(child.route)">

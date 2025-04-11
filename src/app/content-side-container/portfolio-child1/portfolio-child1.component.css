@@ -1,0 +1,14 @@
+p{
+    color: #7A7A7A;
+    font-size: 14px;
+    text-align: justify;
+    line-height: 1.5;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.canvas-container{
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}

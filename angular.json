@@ -52,7 +52,9 @@
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/content-side-container/portfolio-child1/portfolioCanvas.component.js"
+            ]
           },
           "configurations": {
             "production": {
