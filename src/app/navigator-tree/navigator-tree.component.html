@@ -3,8 +3,8 @@
     <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
        <!-- use a disabled button to provide padding for tree leaf  -->
       <!-- <button mat-icon-button type="button" aria-label="Toggle Node"  disabled></button> -->
-       <nav>
-        <a class="a2" [routerLink]="node.route" routerLinkActive="active">{{node.name}}</a>
+       <nav button (click)="clickNode(node)">
+        <a class="a2" [routerLink]="node.route" routerLinkActive="active" >{{node.name}}</a>
        </nav>
       
     </mat-tree-node>
@@ -13,10 +13,12 @@
       <!-- [cdkTreeNodeTypeaheadLabel]="node.name" [attr.aria-expanded]="node.expanded"> -->
                     
       
-      <nav><a class="a2" [routerLink]="node.route" routerLinkActive="active">{{node.name}}</a></nav>
-      <mat-icon class="mat-icon-rtl-mirror">
-          {{ isNodeExpanded(node) ? 'expand_more' : 'chevron_right'}}
-      </mat-icon>
-      
+      <nav button (click)="clickNode(node)">
+        <a class="a2" [routerLink]="node.route" routerLinkActive="active" >
+          {{node.name}}
+        </a>
+      </nav>
+      <mat-icon class="mat-icon-rtl-mirror">expand_more</mat-icon>
+    
     </mat-tree-node>
   </mat-tree> 

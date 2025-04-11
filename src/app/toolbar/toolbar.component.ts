@@ -16,4 +16,9 @@ import {RouterModule, RouterLink } from '@angular/router';
 })
 export class Toolbar {
   @Output() toggleSidebar = new EventEmitter<void>();
+  @Output() navigationChange = new EventEmitter<string>();
+
+  onNavigate(route: string): void {
+    this.navigationChange.emit(route); // Emetti l'evento con la route
+  }
 }

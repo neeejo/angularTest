@@ -5,11 +5,11 @@
     </button>
     <span class="example-spacer"></span>
     <nav>
-      <a class="a1" routerLink="home" routerLinkActive="active">Home</a>
-      <a class="a1" routerLink="about" routerLinkActive="active">About</a>
-      <a class="a1" routerLink="pages" routerLinkActive="active">Pages</a>
-      <a class="a1" routerLink="portfolio" routerLinkActive="active">Portfolio</a>
-      <a class="a1" routerLink="contact" routerLinkActive="active">Contact</a>
+      <a class="a1" routerLink="home" routerLinkActive="active" (click)="onNavigate('home')">Home</a>
+      <a class="a1" routerLink="about" routerLinkActive="active" (click)="onNavigate('about')">About</a>
+      <a class="a1" routerLink="pages" routerLinkActive="active" (click)="onNavigate('pages')">Pages</a>
+      <a class="a1" routerLink="portfolio" routerLinkActive="active" (click)="onNavigate('portfolio')">Portfolio</a>
+      <a class="a1" routerLink="contact" routerLinkActive="active" (click)="onNavigate('contact')">Contact</a>
     </nav>
     
 </mat-toolbar>

@@ -12,7 +12,9 @@
 
   <!-- Main Content -->
   <mat-drawer-content class="mat-drawer-content-custom container">
-    <app-toolbar (toggleSidebar)="drawer.toggle()"></app-toolbar>
+    <app-toolbar 
+      (toggleSidebar)="drawer.toggle()" 
+      (navigationChange)="onNavigationChange($event)"></app-toolbar>
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
