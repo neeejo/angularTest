@@ -4,6 +4,9 @@ import { ContentSideContainerComponent } from "./content-side-container/content-
 import { ContentSideComponent } from "./content-side-container/content-side/content-side.component";
 import { ContentSide2Component } from "./content-side-container/content-side2/content-side2.component";
 import { ContentSide3Component } from "./content-side-container/content-side3/content-side3.component";
+import { ContentSide4Component } from "./content-side-container/content-side4/content-side4.component";
+import { ContentSide5Component } from "./content-side-container/content-side5/content-side5.component";
+
 export const routes: Routes = [
   {
     path: "",
@@ -14,11 +17,33 @@ export const routes: Routes = [
         path: "home",
         children: [
           { path: "4041", component: ContentSide3Component },
+          { path: "4042", component: ContentSide3Component },
+          { path: "4043", component: ContentSide3Component },
           { path: "", component: ContentSideComponent },
         ],
       },
       { path: "about", component: ContentSide2Component },
-      { path: "pages", component: ContentSideComponent },
+      { 
+        path: "pages", 
+        children: [
+          { 
+            path: "4044",
+            children: [
+              { path: "4046", component: ContentSide5Component },
+              { path: "4047", component: ContentSide5Component },
+              { path: "", component: ContentSide5Component },
+            ] 
+          },
+          { 
+            path: "4045", children: [
+              { path: "4048", component: ContentSide5Component },
+              { path: "4049", component: ContentSide5Component },
+              { path: "", component: ContentSide4Component },
+            ] 
+          },
+          { path: "", component: ContentSide4Component },
+        ], 
+    },
       { path: "portfolio", component: ContentSide2Component },
       { path: "contact", component: ContentSide2Component },
     ],

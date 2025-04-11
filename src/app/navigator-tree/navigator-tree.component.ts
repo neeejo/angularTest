@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from "@angular/core";
 import { MatTreeModule } from "@angular/material/tree";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { Router, RouterModule, RouterLink } from "@angular/router";
-
+import { MatTree } from '@angular/material/tree';
 /**
  * Food data with nested structure.
  * Each node has a name and an optional list of children.
@@ -12,6 +12,7 @@ interface FoodNode {
   name: string;
   route?: string;
   children?: FoodNode[];
+  expanded? : boolean;
 }
 
 /**
@@ -21,6 +22,7 @@ interface FoodNode {
   selector: "app-navigator-tree",
   templateUrl: "navigator-tree.component.html",
   imports: [
+    MatTree,
     MatTreeModule,
     MatButtonModule,
     MatIconModule,
@@ -31,42 +33,74 @@ interface FoodNode {
   standalone: true,
 })
 export class NavigatorTreeComponent implements OnInit {
+  @ViewChild(MatTree) tree!: MatTree<any>;
+
   dataSource = EXAMPLE_DATA;
 
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    this.expandNodesForCurrentRoute();
+  }
+  
+  private expandNodesForCurrentRoute(): void {
+    const currentRoute = this.router.url;
+  
+    const expandNodeRecursively = (node: FoodNode) => {
+      if (node.route && currentRoute.startsWith(node.route)) {
+        this.tree.expand(node);
+        node.expanded = true;
+      }
+      if (node.children) {
+        node.children.forEach(child => expandNodeRecursively(child));
+      }
+    };
+  
+    this.dataSource.forEach(node => expandNodeRecursively(node));
+  }
 
   childrenAccessor = (node: FoodNode) => node.children ?? [];
 
   hasChild = (_: number, node: FoodNode) =>
     !!node.children && node.children.length > 0;
 
+  
+  
+  expandNode(node: FoodNode): void {
+    this.tree.expand(node);
+  }
+
+  collapseNode(node: FoodNode): void {
+    this.tree.collapse(node);
+  }
+
   isNodeExpanded(node: FoodNode): boolean {
     const currentRoute = this.router.url;
 
-    // Check if the current node matches the active route
     if (node.route && currentRoute.startsWith(node.route)) {
+      this.expandNodesForCurrentRoute();
       return true;
     }
 
-    // Recursively check if any child matches the active route
     if (node.children) {
       return node.children.some((child) => this.isNodeExpanded(child));
     }
 
-    return false;
+    return node.expanded? node.expanded : false;
   }
+  
 
   navigateTo(route: string) {
     this.router.navigate([route]);
   }
+
 }
 
 const EXAMPLE_DATA: FoodNode[] = [
   {
     name: "Home",
     route: "/home",
+    expanded: true,
     children: [
       {
         name: "Placeholder1",
@@ -89,10 +123,12 @@ const EXAMPLE_DATA: FoodNode[] = [
   {
     name: "Pages",
     route: "/pages",
+    expanded: true,
     children: [
       {
-        name: "Placeholder4",
+        name: "Pagina 5",
         route: "/pages/4044",
+        expanded: true,
         children: [
           {
             name: "Placeholder6",
@@ -107,6 +143,7 @@ const EXAMPLE_DATA: FoodNode[] = [
       {
         name: "Placeholder5",
         route: "/pages/4045",
+        expanded: true,
         children: [
           {
             name: "Placeholder8",

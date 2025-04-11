@@ -9,8 +9,8 @@
       
     </mat-tree-node>
     <!-- This is the tree node template for expandable nodes  -->
-    <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding matTreeNodeToggle 
-      [cdkTreeNodeTypeaheadLabel]="node.name">
+    <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding > 
+      <!-- [cdkTreeNodeTypeaheadLabel]="node.name" [attr.aria-expanded]="node.expanded"> -->
                     
       
       <nav><a class="a2" [routerLink]="node.route" routerLinkActive="active">{{node.name}}</a></nav>
