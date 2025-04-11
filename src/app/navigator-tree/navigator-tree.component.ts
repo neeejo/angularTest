@@ -121,21 +121,7 @@ export class NavigatorTreeComponent implements OnInit, OnDestroy {
 const EXAMPLE_DATA: FoodNode[] = [
   {
     name: "Home",
-    route: "/home",
-    children: [
-      {
-        name: "Placeholder1",
-        route: "/home/4041",
-      },
-      {
-        name: "Placeholder2",
-        route: "/home/4042",
-      },
-      {
-        name: "Placeholder3",
-        route: "/home/4043",
-      },
-    ],
+    route: "/home"
   },
   {
     name: "About",
@@ -146,29 +132,29 @@ const EXAMPLE_DATA: FoodNode[] = [
     route: "/pages",
     children: [
       {
-        name: "Pagina 5",
+        name: "Pagina 4",
         route: "/pages/4044",
         children: [
           {
-            name: "Placeholder6",
+            name: "Pagina 5",
             route: "/pages/4044/4046",
           },
           {
-            name: "Placeholder7",
+            name: "Pagina 6",
             route: "/pages/4044/4047",
           },
         ],
       },
       {
-        name: "Placeholder5",
+        name: "Pagina 7",
         route: "/pages/4045",
         children: [
           {
-            name: "Placeholder8",
+            name: "Pagina 8",
             route: "/pages/4045/4048",
           },
           {
-            name: "Placeholder9",
+            name: "Pagina 9",
             route: "/pages/4045/4049",
           },
         ],
@@ -178,6 +164,20 @@ const EXAMPLE_DATA: FoodNode[] = [
   {
     name: "Portfolio",
     route: "/portfolio",
+    children: [
+      {
+        name: "Pagina 10",
+        route: "/portfolio/4041",
+      },
+      {
+        name: "Pagina 11",
+        route: "/portfolio/4042",
+      },
+      {
+        name: "Pagina 12",
+        route: "/portfolio/4043",
+      },
+    ],
   },
   {
     name: "Contact",

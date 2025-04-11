@@ -14,13 +14,7 @@ export const routes: Routes = [
     children: [
       { path: "", redirectTo: "home", pathMatch: "full" },
       {
-        path: "home",
-        children: [
-          { path: "4041", component: ContentSide3Component },
-          { path: "4042", component: ContentSide3Component },
-          { path: "4043", component: ContentSide3Component },
-          { path: "", component: ContentSideComponent },
-        ],
+        path: "home", component: ContentSideComponent
       },
       { path: "about", component: ContentSide2Component },
       { 
@@ -35,16 +29,25 @@ export const routes: Routes = [
             ] 
           },
           { 
-            path: "4045", children: [
+            path: "4045", 
+            children: [
               { path: "4048", component: ContentSide5Component },
               { path: "4049", component: ContentSide5Component },
-              { path: "", component: ContentSide4Component },
+              { path: "", component: ContentSide5Component },
             ] 
           },
           { path: "", component: ContentSide4Component },
         ], 
     },
-      { path: "portfolio", component: ContentSide2Component },
+      { 
+        path: "portfolio",
+        children: [
+          { path: "4041", component: ContentSide3Component },
+          { path: "4042", component: ContentSide3Component },
+          { path: "4043", component: ContentSide3Component },
+          { path: "", component: ContentSide3Component },
+        ], 
+      },
       { path: "contact", component: ContentSide2Component },
     ],
   },
