@@ -4,12 +4,28 @@
       <mat-icon>menu</mat-icon>
     </button>
     <span class="example-spacer"></span>
-    <nav>
+    <!-- <nav>
       <a class="a1" routerLink="home" routerLinkActive="active" (click)="onNavigate('home')">Home</a>
       <a class="a1" routerLink="about" routerLinkActive="active" (click)="onNavigate('about')">About</a>
       <a class="a1" routerLink="pages" routerLinkActive="active" (click)="onNavigate('pages')">Pages</a>
       <a class="a1" routerLink="portfolio" routerLinkActive="active" (click)="onNavigate('portfolio')">Portfolio</a>
       <a class="a1" routerLink="contact" routerLinkActive="active" (click)="onNavigate('contact')">Contact</a>
+    </nav> -->
+    <nav *ngFor="let node of dataSource" (mouseover)="onHover(node)" (mouseleave)="onLeave()">
+      <ng-container *ngIf="node.route">
+        <a class="a1" [routerLink]="node.route" routerLinkActive="active" (click)="onNavigate(node.route)">
+          {{ node.name }}
+        </a>
+      </ng-container>
+  
+      <!-- Menu a tendina per i figli -->
+      <div class="dropdown" *ngIf="hoveredNode === node && node.children" (mouseover)="onHover(node)" (mouseleave)="onLeave()">
+        <ng-container *ngFor="let child of node.children">
+          <a *ngIf="child.route" class="dropdown-item a2" [routerLink]="child.route" routerLinkActive="active" (click)="onNavigate(child.route)">
+            {{ child.name }}
+          </a>
+        </ng-container>
+      </div>
     </nav>
     
 </mat-toolbar>

@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { PhotoContainerComponent } from './photo-container/photo-container.component';
 import { NavigatorTreeComponent } from './navigator-tree/navigator-tree.component';
 import { Toolbar } from './toolbar/toolbar.component';
+import { EXAMPLE_DATA, FoodNode } from './navigator-tree/navigator-tree.component';
+
 
 @Component({
   selector: 'app-root',
@@ -21,6 +23,8 @@ import { Toolbar } from './toolbar/toolbar.component';
 export class AppComponent {
   @ViewChild(NavigatorTreeComponent) sidebar!: NavigatorTreeComponent; 
 
+  dataSource: FoodNode[] = EXAMPLE_DATA;
+  
   onNavigationChange(route: string): void {
     console.log('Navigated to:', route);
     if (this.sidebar) {

@@ -13,6 +13,7 @@
   <!-- Main Content -->
   <mat-drawer-content class="mat-drawer-content-custom container">
     <app-toolbar 
+      [dataSource]="dataSource"
       (toggleSidebar)="drawer.toggle()" 
       (navigationChange)="onNavigationChange($event)"></app-toolbar>
     <router-outlet></router-outlet>

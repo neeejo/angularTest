@@ -8,7 +8,7 @@ import { MatTree } from '@angular/material/tree';
  * Food data with nested structure.
  * Each node has a name and an optional list of children.
  */
-interface FoodNode {
+export interface FoodNode {
   name: string;
   route?: string;
   children?: FoodNode[];
@@ -118,7 +118,7 @@ export class NavigatorTreeComponent implements OnInit, OnDestroy {
 
 }
 
-const EXAMPLE_DATA: FoodNode[] = [
+export const EXAMPLE_DATA: FoodNode[] = [
   {
     name: "Home",
     route: "/home"
