@@ -13,8 +13,12 @@ function Canvas2D() {
 }
 
 Canvas2D.prototype.clear = function() {
+    if (!this._canvasContext) {
+        console.error("Canvas context is not initialized!");
+        return;
+    }
     this._canvasContext.clearRect(0, 0, this._canvas.width, this._canvas.height);
-}
+};
 
 Canvas2D.prototype.drawImage = function(image, position) {
     if (!this._canvasContext) {
@@ -25,5 +29,12 @@ Canvas2D.prototype.drawImage = function(image, position) {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    window.Canvas = new Canvas2D();
+    console.log("DOM fully loaded and parsed");
+    const canvasElement = document.getElementById("screen");
+    if (canvasElement) {
+        console.log("Canvas element found:", canvasElement);
+        window.Canvas = new Canvas2D();
+    } else {
+        console.error("Canvas element not found in DOM!");
+    }
 });

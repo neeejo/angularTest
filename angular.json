@@ -53,7 +53,11 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/app/content-side-container/portfolio-child1/portfolioCanvas.component.js"
+              "src/app/content-side-container/portfolio-child1/portfolioCanvas.component.js",
+              "src/app/content-side-container/portfolio-child1/portfolioAssests.component.js",
+              "src/app/content-side-container/portfolio-child1/portfolioStick.component.js",
+              "src/app/content-side-container/portfolio-child1/portfolioGameWorld.component.js",
+              "src/app/content-side-container/portfolio-child1/portfolioGame.component.js"
             ]
           },
           "configurations": {

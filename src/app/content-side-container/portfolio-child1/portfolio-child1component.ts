@@ -2,7 +2,9 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { RouterModule, Router, NavigationStart } from "@angular/router";
 import { Subscription } from "rxjs";
 
-declare const Canvas2D: any;
+declare const Canvas: any;
+declare function loadAssets(callback: () => void): void;
+declare const PoolGame: { start: () => void };
 
 @Component({
   selector: "app-portfolio-child1",
@@ -18,6 +20,10 @@ export class PortfolioChild1Component implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.initializeCanvas();
+
+    loadAssets(() => {
+      PoolGame.start();
+    });
 
     this.routerSubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
